@@ -36,6 +36,7 @@
                     .yanaa-red {fill:#b90506;}
                     .yanaa-white {fill:#FFFFFF;}
                     .yanaa-blue {fill:#184183;}
+
                 </style>
                 
                 <!-- Slogan Grp -->
@@ -331,6 +332,7 @@
                     <rect x="847.6" y="571.8" style="opacity: 0; visibility: hidden;" class="yanaa-white" width="224.8" height="30.6"/>
                     <rect x="1072.4" y="571.8" style="opacity: 0; visibility: hidden;" class="yanaa-red" width="224.8" height="30.6"/>
                 </g>
+
             </svg>
 
 
@@ -339,7 +341,9 @@
 
 
     <!-- Begin JavaScript Libraries Files -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+
 
     <!-- End JavaScript Libraries Files -->
 
@@ -347,6 +351,10 @@
         <script type="text/javascript">
             
             (function () {
+
+                //  Register Plugin
+                    gsap.registerPlugin(MotionPathPlugin);
+
 
                 //  Variables
                     let black_dot = document.querySelector("#black_dot_anim");
@@ -393,6 +401,11 @@
                         transformOrigin: "center",
                         autoAlpha: 0,
                         scale: 5
+                    });
+
+                    gsap.set("#spaceship", {
+                        transformOrigin: "center",
+                        y: 500
                     });
 
                     
@@ -500,7 +513,7 @@
                     }, "<=10%");
 
                     desktop_intro_tl.to(france_flag_els, {
-                        y: -450,
+                        y: -850,
                         duration: 1,
                         ease: "power4.inOut",
                         stagger: 0.05,
@@ -511,6 +524,8 @@
                           }
                         },
                     });
+
+                    
 
 
 
